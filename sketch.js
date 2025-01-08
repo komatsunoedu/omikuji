@@ -23,32 +23,44 @@ function setup() {
   
   result=floor(random(1,11));
   //textSize(30);  
-  
+  noStroke()
 }
 function draw() {
   
   if(isGameStarted){
     background(240);
-    if(result==1){
-      image(imgdaikichi,100,0,200,400);
-      fill(240,0,240,abs(cos(radians(frameCount/3))));
-      rect(0,0,400,400);
-    }else if(result>1 && result<=9){
-      image(imgkichi,100,0,200,400);
-      fill(240,0,240,abs(cos(radians(frameCount/3))));
-      rect(0,0,400,400);
-    }else if(result==10){
-      image(imgkyou,100,0,200,400);
-      fill(240,0,240,abs(cos(radians(frameCount/3))));
-      rect(0,0,400,400);
+    if(frameCount>90){
+      if(result==1){
+        image(imgdaikichi,100,0,200,400);
+        fill(240,0,240,abs(cos(radians((frameCount-90)/3))));
+        rect(0,0,400,400);
+      }else if(result>1 && result<=9){
+        image(imgkichi,100,0,200,400);
+        fill(240,0,240,abs(cos(radians((frameCount-90)/3))));
+        rect(0,0,400,400);
+      }else if(result==10){
+        image(imgkyou,100,0,200,400);
+        fill(240,0,240,abs(cos(radians((frameCount-90)/3))));
+        rect(0,0,400,400);
+      }
     }
   }
-  if(radians(frameCount/3)>HALF_PI){
-    noLoop();
+  if(radians((frameCount-90)/3)>HALF_PI){
+    isGameStarted=false;
+    frameCount=0;
+    // スタートボタンを作成
+    button = createButton('もう一度ひく'); // ボタンのラベルを設定
+    button.position(width/2-60, 350); // ボタンの位置を指定
+    button.mousePressed(restartGame); // ボタンが押されたときに呼び出す関数を指定
   }
 }
 
 function startGame() {
+  isGameStarted = true; // ゲームを開始
+  button.hide(); // ボタンを非表示
+}
+
+function restartGame() {
   isGameStarted = true; // ゲームを開始
   button.hide(); // ボタンを非表示
 }
