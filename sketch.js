@@ -5,10 +5,10 @@ let imgdaikichi,imgkichi,imgkyou,imgstart;
 
 // Load the image.
 function preload() {
-  imgdaikichi = loadImage('https://assets.editor.p5js.org/674d05aeed4a5598d1f03b61/0c1b40c8-9f2b-4b4a-a76a-69f6d074e5a8.png');
-  imgkichi=loadImage('https://assets.editor.p5js.org/674d05aeed4a5598d1f03b61/39ff4a27-a8ca-4d40-ab72-d1eaa35b1693.png');
-  imgkyou=loadImage('https://assets.editor.p5js.org/674d05aeed4a5598d1f03b61/18804cad-c713-4e0d-baa2-219c676bd059.png');
-  imgstart=loadImage('https://assets.editor.p5js.org/674d05aeed4a5598d1f03b61/b2f7d7ad-32f3-45a8-a371-148b24402c60.png')
+  imgdaikichi = loadImage('omikuji_daikichi.png');
+  imgkichi=loadImage('omikuji_kichi.png');
+  imgkyou=loadImage('omikuji_kyou.png');
+  imgstart=loadImage('syougatsu2_omijikuji2.png')
 }
 
 function setup() {
